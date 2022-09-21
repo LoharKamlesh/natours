@@ -12,7 +12,11 @@ exports.getOverview = async (req, res, next) => {
       tours: tours,
     });
   } catch (err) {
-    console.log(err);
+    //console.log(err);
+    res.status(404).json({
+      status: 'fail',
+      message: err,
+    });
   }
 
   //2) Build template
@@ -38,7 +42,11 @@ exports.getTour = async (req, res, next) => {
 
     //3) render that template using tour data from 1)
   } catch (err) {
-    console.log(err);
+    //console.log(err);
+    res.status(404).json({
+      status: 'fail',
+      message: err,
+    });
   }
 };
 exports.getMyTours = async (req, res, next) => {
@@ -88,6 +96,10 @@ exports.updateUserData = async (req, res, next) => {
       user: updatedUser,
     });
   } catch (err) {
-    console.log(err);
+    //console.log(err);
+    res.status(404).json({
+      status: 'fail',
+      message: err,
+    });
   }
 };

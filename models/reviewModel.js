@@ -70,7 +70,7 @@ reviewSchema.statics.calcAverageRatings = async function (tourId) {
       },
     },
   ]);
-  console.log(stats);
+  //console.log(stats);
 
   if (stats.length > 0) {
     await Tour.findByIdAndUpdate(tourId, {
@@ -96,7 +96,7 @@ reviewSchema.post('save', function () {
 //these are query middleware and have access to only query but here we want access to document(tour) inorder to get review from that doc.
 reviewSchema.pre(/^findOneAnd/, async function (next) {
   this.rev = await this.clone().findOne(); //by using this.rev(it is Model) we create a property on document so that we can use it in next middleware
-  console.log(this.rev);
+  //console.log(this.rev);
   next();
 });
 reviewSchema.post(/^findOneAnd/, async function () {

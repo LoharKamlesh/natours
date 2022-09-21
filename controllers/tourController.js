@@ -68,7 +68,11 @@ exports.resizeTourImages = async (req, res, next) => {
     );
     next();
   } catch (err) {
-    console.log(err);
+    //console.log(err);
+    res.status(404).json({
+      status: 'fail',
+      message: err,
+    });
   }
 };
 

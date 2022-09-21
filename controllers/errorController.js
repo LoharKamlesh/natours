@@ -63,7 +63,7 @@ const sendErrorProd = (err, req, res) => {
       //Programming or other unknown error: don't leak error details
     } else {
       //1) log error
-      //console.error('Error💥', err);
+      console.error('Error💥', err);
 
       //2)Send generic message to client
       return res.status(500).json({
@@ -81,7 +81,7 @@ const sendErrorProd = (err, req, res) => {
       //Programming or other unknown error: don't leak error details
     } else {
       //1) log error
-      //console.error('Error💥', err);
+      console.error('Error💥', err);
 
       //2)Send generic message to client
       return res.status(err.statusCode).render('error', {

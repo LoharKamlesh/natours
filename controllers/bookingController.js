@@ -13,7 +13,7 @@ exports.getCheckoutSession = async (req, res, next) => {
     const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
     const tour = await Tour.findById(req.params.tourID);
-    console.log(req.params.tourID);
+    //console.log(req.params.tourID);
 
     //2) Create checkout session
     const session = await stripe.checkout.sessions.create({
@@ -59,7 +59,7 @@ exports.getCheckoutSession = async (req, res, next) => {
 
 exports.createBookingCheckout = async (req, res, next) => {
   //This is only temporary bcoz its unsecured everyone can make booking without paying
-  console.log(req.query);
+  //console.log(req.query);
   const { tour, user, price } = req.query;
   if (!tour && !user && !price) {
     return next();

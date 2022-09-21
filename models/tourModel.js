@@ -178,10 +178,10 @@ tourSchema.pre(/^find/, function (next) {
   next();
 }); //^find means all string that starts with find-- will be acted upon
 
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`Query took ${Date.now() - this.start} milliseconds `);
-  next();
-});
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`Query took ${Date.now() - this.start} milliseconds `);
+//   next();
+// });
 
 //AGGREGATOR MIDDLEWARE
 // tourSchema.pre('aggregate', function (next) {

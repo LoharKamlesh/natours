@@ -14,7 +14,7 @@ const DB = process.env.DATABASE.replace(
 );
 
 mongoose.connect(DB).then((con) => {
-  console.log(con.connections);
+  //console.log(con.connections);
   console.log('DB connection successful!');
 });
 
@@ -35,7 +35,11 @@ const importData = async () => {
     await Review.create(reviews);
     console.log('Data successfully loaded');
   } catch (err) {
-    console.log(err);
+    //console.log(err);
+    res.status(404).json({
+      status: 'fail',
+      message: err,
+    });
   }
   process.exit();
 };
@@ -48,7 +52,11 @@ const deleteData = async () => {
     await Review.deleteMany();
     console.log('Data successfully deleted');
   } catch (err) {
-    console.log(err);
+    //console.log(err);
+    res.status(404).json({
+      status: 'fail',
+      message: err,
+    });
   }
   process.exit();
 };
