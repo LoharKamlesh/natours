@@ -8,6 +8,7 @@ const { promisify } = require('util');
 const User = require('../models/userModel');
 const AppError = require('../utils/appError');
 const Email = require('../utils/email');
+const catchAsync = require('../utils/catchAsync');
 
 const signToken = (id) =>
   //console.log(id);
@@ -47,65 +48,27 @@ const createSendToken = (user, statusCode, req, res) => {
   });
 };
 //creating export for controller
-exports.signup = async (req, res, next) => {
-  try {
-    //creating new user, and new document using model
-    //const newUser = await User.create(req.body); //pass an object with the data form which the user should be created.
 
-    const newUser = await User.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      passwordConfirm: req.body.passwordConfirm,
-      passwordChangedAt: req.body.passwordChangedAt,
-      role: req.body.role,
-      passwordResetToken: req.body.passwordResetToken,
-      passwordResetExpires: req.body.passwordResetExpires,
-      // active: req.body.active,
-    });
-    // if (!newUser) {
-    //   return next(new AppError('Please fill up the signup form', 400));
-    // }
-    //const url = `${req.protocol}://${req.get('host')}/me`;
-    //console.log(url);
-    //await new Email(newUser, url).sendWelcome();
+exports.signup = catchAsync(async (req, res, next) => {
+  //creating new user, and new document using model
+  //const newUser = await User.create(req.body); //pass an object with the data form which the user should be created.
 
-    createSendToken(newUser, 201, req, res);
+  const newUser = await User.create({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    passwordConfirm: req.body.passwordConfirm,
+    passwordChangedAt: req.body.passwordChangedAt,
+    role: req.body.role,
+    passwordResetToken: req.body.passwordResetToken,
+    passwordResetExpires: req.body.passwordResetExpires,
+  });
+  const url = `${req.protocol}://${req.get('host')}/me`;
 
-    // const token = signToken(newUser._id);
-    // //console.log(newUser._id);
-    // const cookieOptions = {
-    //   expires: new Date(
-    //     Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-    //   ),
-    //   secure: true,
-    //   httpOnly: true,
-    // };
-    // res.cookie('jwt', token, cookieOptions);
+  await new Email(newUser, url).sendWelcome();
 
-    // if (process.env.NODE_ENV === 'production') {
-    //   cookieOptions.secure = true;
-    // }
-
-    // //Sending new user to client
-    // res.status(201).json({
-    //   status: 'success',
-    //   token,
-    //   data: {
-    //     user: newUser,
-    //   },
-    // });
-  } catch (err) {
-    //return next(new AppError(`${err}`, 400));
-    res.status(400).json({
-      status: 'fail',
-      error: err,
-      message: err.message,
-      stack: err.stack,
-    });
-  }
-  //next();
-};
+  createSendToken(newUser, 201, req, res);
+});
 
 exports.login = async (req, res, next) => {
   try {
