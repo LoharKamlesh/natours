@@ -25,13 +25,13 @@ if (mapBox) {
 if (signupForm) {
   signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    // const name = document.getElementById('name').value;
-    // const email = document.getElementById('email').value;
-    // const password = document.getElementById('password').value;
-    // const passwordConfirm = document.getElementById('password-confirm').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('password-confirm').value;
 
-    //signup(name, email, password, passwordConfirm);
-    signup();
+    signup(name, email, password, passwordConfirm);
+    //signup();
   });
 }
 
