@@ -66,9 +66,9 @@ exports.signup = async (req, res, next) => {
     // if (!newUser) {
     //   return next(new AppError('Please fill up the signup form', 400));
     // }
-    const url = `${req.protocol}://${req.get('host')}/me`;
+    //const url = `${req.protocol}://${req.get('host')}/me`;
     //console.log(url);
-    await new Email(newUser, url).sendWelcome();
+    //await new Email(newUser, url).sendWelcome();
 
     createSendToken(newUser, 201, req, res);
 
@@ -95,7 +95,6 @@ exports.signup = async (req, res, next) => {
     //     user: newUser,
     //   },
     // });
-
   } catch (err) {
     //return next(new AppError(`${err}`, 400));
     res.status(400).json({
