@@ -133,13 +133,6 @@ exports.deleteMe = async (req, res, next) => {
   }
 };
 
-exports.createUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined! Please use /signup instead.',
-  });
-};
-
 //exports.getAllUsers = factory.getAll(User);
 exports.getAllUsers = async (req, res) => {
   try {
@@ -179,3 +172,5 @@ exports.getUser = factory.getOne(User);
 //Do NOT update password with this!!!
 exports.updateUser = factory.updateOne(User); //this is only for admins and it does not update password. whenever we run findByIdAndUpdate() all the save middleware is not run
 exports.deleteUser = factory.deleteOne(User);
+
+exports.createUser = factory.createOne(User);
