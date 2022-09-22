@@ -7,7 +7,7 @@ export const signup = async (name, email, password, passwordConfirm) => {
 
     const result = await axios({
       method: 'POST',
-      url: 'http://127.0.0.1:5000/api/v1/users/signup',
+      url: 'https://natours-kamlesh.herokuapp.com//api/v1/users/signup',
       data: {
         name: name,
         email: email,
