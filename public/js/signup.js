@@ -7,14 +7,15 @@ export const signup = async (name, email, password, passwordConfirm) => {
 
     const result = await axios({
       method: 'POST',
-      url: 'https://natours-kamlesh.herokuapp.com//api/v1/users/signup',
+      url: '/api/v1/users/signup',
       data: {
-        name: name,
-        email: email,
-        password: password,
-        passwordConfirm: passwordConfirm,
+        name,
+        email,
+        password,
+        passwordConfirm,
       },
     });
+    console.log(result);
     if (result.data.status === 'success') {
       showAlert('success', 'signed in successfully');
       window.setTimeout(() => {
@@ -25,18 +26,3 @@ export const signup = async (name, email, password, passwordConfirm) => {
     showAlert('error', err.response.data.message);
   }
 };
-
-// export const logout = async (req, res) => {
-//   try {
-//     const result = await axios({
-//       method: 'GET',
-//       url: '/api/v1/users/logout',
-//     });
-//     //console.log(result);
-//     if (result.data.status === 'success') {
-//       location.reload(true);
-//     }
-//   } catch (err) {
-//     showAlert('error', 'Error Logging out! Try Again');
-//   }
-// };
