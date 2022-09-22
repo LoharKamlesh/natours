@@ -92,6 +92,8 @@ exports.signup = async (req, res, next) => {
     //     user: newUser,
     //   },
     // });
+
+    next();
   } catch (err) {
     //return next(new AppError(`${err}`, 400));
     res.status(400).json({
