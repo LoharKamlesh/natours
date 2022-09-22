@@ -47,65 +47,65 @@ const createSendToken = (user, statusCode, req, res) => {
   });
 };
 //creating export for controller
-// exports.signup = async (req, res, next) => {
-//   try {
-//     //creating new user, and new document using model
-//     //const newUser = await User.create(req.body); //pass an object with the data form which the user should be created.
+exports.signup = async (req, res, next) => {
+  try {
+    //creating new user, and new document using model
+    //const newUser = await User.create(req.body); //pass an object with the data form which the user should be created.
 
-//     const newUser = await User.create({
-//       name: req.body.name,
-//       email: req.body.email,
-//       password: req.body.password,
-//       passwordConfirm: req.body.passwordConfirm,
-//       passwordChangedAt: req.body.passwordChangedAt,
-//       role: req.body.role,
-//       passwordResetToken: req.body.passwordResetToken,
-//       passwordResetExpires: req.body.passwordResetExpires,
-//       // active: req.body.active,
-//     });
-//     // if (!newUser) {
-//     //   return next(new AppError('Please fill up the signup form', 400));
-//     // }
-//     //const url = `${req.protocol}://${req.get('host')}/me`;
-//     //console.log(url);
-//     //await new Email(newUser, url).sendWelcome();
+    const newUser = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      passwordConfirm: req.body.passwordConfirm,
+      passwordChangedAt: req.body.passwordChangedAt,
+      role: req.body.role,
+      passwordResetToken: req.body.passwordResetToken,
+      passwordResetExpires: req.body.passwordResetExpires,
+      // active: req.body.active,
+    });
+    // if (!newUser) {
+    //   return next(new AppError('Please fill up the signup form', 400));
+    // }
+    //const url = `${req.protocol}://${req.get('host')}/me`;
+    //console.log(url);
+    //await new Email(newUser, url).sendWelcome();
 
-//     createSendToken(newUser, 201, req, res);
+    createSendToken(newUser, 201, req, res);
 
-//     // const token = signToken(newUser._id);
-//     // //console.log(newUser._id);
-//     // const cookieOptions = {
-//     //   expires: new Date(
-//     //     Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-//     //   ),
-//     //   secure: true,
-//     //   httpOnly: true,
-//     // };
-//     // res.cookie('jwt', token, cookieOptions);
+    // const token = signToken(newUser._id);
+    // //console.log(newUser._id);
+    // const cookieOptions = {
+    //   expires: new Date(
+    //     Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    //   ),
+    //   secure: true,
+    //   httpOnly: true,
+    // };
+    // res.cookie('jwt', token, cookieOptions);
 
-//     // if (process.env.NODE_ENV === 'production') {
-//     //   cookieOptions.secure = true;
-//     // }
+    // if (process.env.NODE_ENV === 'production') {
+    //   cookieOptions.secure = true;
+    // }
 
-//     // //Sending new user to client
-//     // res.status(201).json({
-//     //   status: 'success',
-//     //   token,
-//     //   data: {
-//     //     user: newUser,
-//     //   },
-//     // });
-//   } catch (err) {
-//     //return next(new AppError(`${err}`, 400));
-//     res.status(400).json({
-//       status: 'fail',
-//       error: err,
-//       message: err.message,
-//       stack: err.stack,
-//     });
-//   }
-//   //next();
-// };
+    // //Sending new user to client
+    // res.status(201).json({
+    //   status: 'success',
+    //   token,
+    //   data: {
+    //     user: newUser,
+    //   },
+    // });
+  } catch (err) {
+    //return next(new AppError(`${err}`, 400));
+    res.status(400).json({
+      status: 'fail',
+      error: err,
+      message: err.message,
+      stack: err.stack,
+    });
+  }
+  //next();
+};
 
 exports.login = async (req, res, next) => {
   try {
