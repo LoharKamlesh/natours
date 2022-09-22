@@ -5,7 +5,7 @@ import '@babel/polyfill';
 //import 'regenerator-runtime/runtime';
 import { displayMap } from './leaflet';
 import { login, logout } from './login';
-import { signup } from './signup';
+import { signup } from '../../controllers/authController';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
 
@@ -25,12 +25,13 @@ if (mapBox) {
 if (signupForm) {
   signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const passwordConfirm = document.getElementById('password-confirm').value;
+    // const name = document.getElementById('name').value;
+    // const email = document.getElementById('email').value;
+    // const password = document.getElementById('password').value;
+    // const passwordConfirm = document.getElementById('password-confirm').value;
 
-    signup(name, email, password, passwordConfirm);
+    //signup(name, email, password, passwordConfirm);
+    signup();
   });
 }
 
