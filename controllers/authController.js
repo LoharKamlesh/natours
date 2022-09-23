@@ -53,7 +53,7 @@ exports.signup = async (req, res, next) => {
   try {
     //creating new user, and new document using model
     //const newUser = await User.create(req.body); //pass an object with the data form which the user should be created.
-
+    console.log(req.body);
     const newUser = await User.create({
       name: req.body.name,
       email: req.body.email,
