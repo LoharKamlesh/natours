@@ -71,6 +71,12 @@ exports.signup = async (req, res, next) => {
     createSendToken(newUser, 201, req, res);
   } catch (err) {
     console.log('Hi I am here', err);
+    res.status(400).json({
+      status: 'fail',
+      error: err,
+      message: err.message,
+      stack: err.stack,
+    });
   }
 };
 
