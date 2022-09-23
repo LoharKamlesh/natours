@@ -5,7 +5,7 @@ import '@babel/polyfill';
 //import 'regenerator-runtime/runtime';
 import { displayMap } from './leaflet';
 import { login, logout } from './login';
-import { signup } from '../../controllers/authController';
+import { signup } from './signup';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
 

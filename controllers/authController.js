@@ -49,37 +49,6 @@ const createSendToken = (user, statusCode, req, res) => {
 };
 //creating export for controller
 
-exports.signup = async (req, res, next) => {
-  try {
-    //creating new user, and new document using model
-    //const newUser = await User.create(req.body); //pass an object with the data form which the user should be created.
-    console.log(req.body);
-    const newUser = await User.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      passwordConfirm: req.body.passwordConfirm,
-      passwordChangedAt: req.body.passwordChangedAt,
-      role: req.body.role,
-      passwordResetToken: req.body.passwordResetToken,
-      passwordResetExpires: req.body.passwordResetExpires,
-    });
-    const url = `${req.protocol}://${req.get('host')}/me`;
-
-    await new Email(newUser, url).sendWelcome();
-
-    createSendToken(newUser, 201, req, res);
-  } catch (err) {
-    console.log('Hi I am here', err);
-    res.status(400).json({
-      status: 'fail',
-      error: err,
-      message: err.message,
-      stack: err.stack,
-    });
-  }
-};
-
 exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -370,4 +339,35 @@ exports.logout = (req, res) => {
   res.status(200).json({
     status: 'success',
   });
+};
+
+exports.signup = async (req, res, next) => {
+  try {
+    //creating new user, and new document using model
+    //const newUser = await User.create(req.body); //pass an object with the data form which the user should be created.
+    console.log(req);
+    const newUser = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      passwordConfirm: req.body.passwordConfirm,
+      passwordChangedAt: req.body.passwordChangedAt,
+      role: req.body.role,
+      passwordResetToken: req.body.passwordResetToken,
+      passwordResetExpires: req.body.passwordResetExpires,
+    });
+    const url = `${req.protocol}://${req.get('host')}/me`;
+
+    await new Email(newUser, url).sendWelcome();
+
+    createSendToken(newUser, 201, req, res);
+  } catch (err) {
+    console.log('Hi I am here', err);
+    res.status(400).json({
+      status: 'fail',
+      error: err,
+      message: err.message,
+      stack: err.stack,
+    });
+  }
 };
