@@ -1127,6 +1127,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    width: 100%;
   }
   .nav {
     flex-direction: row;
@@ -1185,7 +1186,7 @@ body {
   }
   body {
     line-height: 1.6;
-    padding: 0.5rem;
+    padding: 0.1rem;
     min-height: 100vh;
   }
   .main {
