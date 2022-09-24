@@ -1183,9 +1183,8 @@ body {
     width: 120%;
   }
   body {
-    line-height: 1.6;
+    width: 110%;
     padding: 0.1rem;
-    min-height: 100vh;
   }
   .main {
     padding: 2rem 1rem;
@@ -1201,6 +1200,9 @@ body {
   }
   .heading-box__group {
     margin-top: 1rem;
+  }
+  .main {
+    width: 120%;
   }
 }
 
