@@ -1069,13 +1069,24 @@ body {
   color: #f2f2f2;
   border-bottom: 1px solid currentColor;
 }
+@media (max-width: 37.5em) {
+  .card-container {
+    max-width: 120rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 7rem;
+  }
+}
 
-.card-container {
-  max-width: 120rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 7rem;
+@media (min-width: 37.5em) {
+  .card-container {
+    max-width: 120rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 7rem;
+  }
 }
 
 .card {
