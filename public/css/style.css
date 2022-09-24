@@ -928,6 +928,8 @@ body {
     margin-right: 0;
     margin-bottom: 1.2rem;
   }
+}
+@media only screen and (max-width: 62.5em) {
   .card-container {
     /*max-width: 120rem;*/
     margin: 0 auto;
@@ -936,6 +938,7 @@ body {
     grid-gap: 3rem;
   }
 }
+
 .nav__el:focus {
   outline: none;
 }
