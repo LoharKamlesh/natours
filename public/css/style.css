@@ -1069,7 +1069,7 @@ body {
   color: #f2f2f2;
   border-bottom: 1px solid currentColor;
 }
-@media (max-width: 30em) {
+@media (max-width: 26em) {
   .nav__el,
   .nav__el:link,
   .nav__el:visited {
@@ -1127,7 +1127,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: 110%;
+    width: 120%;
   }
   .nav {
     flex-direction: row;
@@ -1169,18 +1169,18 @@ body {
     padding: 1rem;
     padding-bottom: 1rem;
     padding-top: calc(3rem + var(--section-rotate));
-    width: 110%;
+    width: 120%;
   }
   .cta {
     padding: 3rem 3rem 6rem 20rem;
   }
   .section-reviews {
     padding: calc(0.5rem + var(--section-rotate)) 0;
-    width: 110%;
+    width: 120%;
   }
   .section-map {
     height: 40rem;
-    width: 110%;
+    width: 120%;
   }
   body {
     line-height: 1.6;
@@ -1191,17 +1191,20 @@ body {
     padding: 2rem 1rem;
   }
   .section-header {
-    width: 110%;
+    width: 120%;
   }
   .section-description {
-    width: 110%;
+    width: 120%;
   }
   .section-pictures {
-    width: 110%;
+    width: 120%;
+  }
+  .heading-box__group {
+    margin-top: 1rem;
   }
 }
 
-@media (min-width: 30em) {
+@media (min-width: 26em) {
   .card-container {
     max-width: 120rem;
     margin: 0 auto;
