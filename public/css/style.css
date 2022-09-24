@@ -1069,7 +1069,7 @@ body {
   color: #f2f2f2;
   border-bottom: 1px solid currentColor;
 }
-@media (max-width: 37.5em) {
+@media (max-width: 30em) {
   .nav__el,
   .nav__el:link,
   .nav__el:visited {
@@ -1127,7 +1127,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: 100%;
+    width: 110%;
   }
   .nav {
     flex-direction: row;
@@ -1169,20 +1169,18 @@ body {
     padding: 1rem;
     padding-bottom: 1rem;
     padding-top: calc(3rem + var(--section-rotate));
-    background-color: #f7f7f7;
+    width: 110%;
   }
   .cta {
     padding: 3rem 3rem 6rem 20rem;
   }
   .section-reviews {
     padding: calc(0.5rem + var(--section-rotate)) 0;
-    position: relative;
-    z-index: 1000;
+    width: 110%;
   }
   .section-map {
-    position: relative;
     height: 40rem;
-    margin-top: calc(0px - var(--section-rotate));
+    width: 110%;
   }
   body {
     line-height: 1.6;
@@ -1192,9 +1190,18 @@ body {
   .main {
     padding: 2rem 1rem;
   }
+  .section-header {
+    width: 110%;
+  }
+  .section-description {
+    width: 110%;
+  }
+  .section-pictures {
+    width: 110%;
+  }
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 30em) {
   .card-container {
     max-width: 120rem;
     margin: 0 auto;
