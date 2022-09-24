@@ -929,13 +929,13 @@ body {
     margin-bottom: 1.2rem;
   }
 }
-@media only screen and (max-width: 62.5em) {
+@media only screen and (max-width: 37.5em) {
   .card-container {
     /*max-width: 120rem;*/
-    margin: 0 auto;
-    display: grid;
+    /*margin: 0 auto;
+    display: grid;*/
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 3rem;
+    /*grid-gap: 3rem;*/
   }
 }
 
