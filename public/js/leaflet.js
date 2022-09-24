@@ -1,5 +1,6 @@
 export const displayMap = (locations) => {
-  let map = L.map('map', { zoomControl: false, dragging: false });
+  //let map = L.map('map', { zoomControl: false, dragging: false });
+  let map = L.map('map', { zoomControl: false });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution:

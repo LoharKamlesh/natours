@@ -1070,12 +1070,106 @@ body {
   border-bottom: 1px solid currentColor;
 }
 @media (max-width: 37.5em) {
+  .nav__el,
+  .nav__el:link,
+  .nav__el:visited {
+    color: #f7f7f7;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    /* display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex; */
+    /* -webkit-box-align: center;
+    -ms-flex-align: center; */
+    align-items: flex-start;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: inherit;
+    margin-bottom: 0rem;
+  }
+
+  .nav__el--cta {
+    padding: 1rem 3rem;
+    border-radius: 0rem;
+    border: 0px solid currentColor !important;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: row;
+  }
+
+  .header__logo {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+    margin-bottom: 0rem;
+    height: 3.5rem;
+  }
+
+  .header {
+    background-color: #444;
+    padding: 0 2rem;
+    height: 9rem;
+    position: relative;
+    z-index: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .nav {
+    flex-direction: row;
+  }
+
+  .nav--tours {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%;
+  }
+
+  .nav--user {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%;
+    -webkit-box-pack: end;
+    /* background-color: #444; */
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin-top: 3px;
+  }
+
   .card-container {
     max-width: 120rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 7rem;
+  }
+
+  .heading-primary {
+    font-size: 1.8rem;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .section-cta {
+    margin-top: calc(0px - var(--section-rotate));
+    padding: 1rem;
+    padding-bottom: 1rem;
+    padding-top: calc(3rem + var(--section-rotate));
+    background-color: #f7f7f7;
   }
 }
 
