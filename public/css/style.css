@@ -1069,7 +1069,7 @@ body {
   color: #f2f2f2;
   border-bottom: 1px solid currentColor;
 }
-@media only screen and (max-width: 37.5em) {
+@media (max-width: 37.5em) {
   .card-container {
     max-width: 120rem;
     margin: 0 auto;
