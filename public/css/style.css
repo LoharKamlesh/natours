@@ -925,7 +925,7 @@ body {
 }
 @media only screen and (max-width: 37.5em) {
   .nav__el:not(:last-child) {
-    margin-right: 0;
+    /*margin-right: 0;*/
     margin-bottom: 1.2rem;
   }
 }
@@ -1203,6 +1203,23 @@ body {
   }
   .main {
     width: 120%;
+  }
+  .footer {
+    width: 120%;
+  }
+  .user-view__menu {
+    -webkit-box-flex: 32rem;
+    -ms-flex: 32rem 0 0px;
+    flex: 0rem 0 0;
+    padding: 4rem 0;
+  }
+  .user-view__form-container {
+    max-width: 68rem;
+    padding: 0 2rem;
+  }
+  .nav__el:not(:last-child) {
+    margin-bottom: 0rem;
+    font-size: 1.4rem;
   }
 }
 
